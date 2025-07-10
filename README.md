@@ -19,7 +19,7 @@ The application allows users to manage their daily tasks: add new todos, mark th
 * **Clear Completed:** Remove all finished tasks with one action.
 * **Data Persistence:** All todo items are stored in a database via the backend.
 * **Responsive Design:** Adapts to different screen sizes.
-* **Light/Dark Theme Toggle:** Switch between themes for user preference.
+* **Light/Dark Theme Toggle:** Switch between themes for user preference
 
 ---
 
