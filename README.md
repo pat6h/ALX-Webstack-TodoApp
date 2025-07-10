@@ -1,101 +1,136 @@
-# Frontend Mentor - Todo app
+# ALX Webstack - Todo Application (Full-Stack)
 
-## [View](https://iamkk25.github.io/frontend-mentor-todo-app/) this site.
+---
 
-![Design preview for the Todo app coding challenge](./design/desktop-preview.jpg)
+## 🚀 Project Overview
 
-## Welcome! 👋
+This project is a full-stack Todo application developed as part of my **ALX Webstack - Portfolio Project**. It demonstrates a complete web development workflow, integrating a clean, responsive frontend with a robust Python backend for persistent data storage.
 
-Thanks for checking out this front-end coding challenge.
+The application allows users to manage their daily tasks: add new todos, mark them as complete, filter by active/completed/all, delete individual todos, and clear all completed tasks. All data is stored in a SQLite database via the backend, ensuring persistence even after the browser is closed.
 
-[Frontend Mentor](https://www.frontendmentor.io) challenges help you improve your coding skills by building realistic projects.
+---
 
-**To do this challenge, you need a good understanding of HTML, CSS and JavaScript.**
+## ✨ Features
 
-## The challenge
+* **Add New Todos:** Easily create new tasks.
+* **Mark as Complete:** Toggle todo status with a click.
+* **Delete Todos:** Remove tasks individually.
+* **Filter Todos:** View All, Active, or Completed tasks.
+* **Clear Completed:** Remove all finished tasks with one action.
+* **Data Persistence:** All todo items are stored in a database via the backend.
+* **Responsive Design:** Adapts to different screen sizes.
+* **Light/Dark Theme Toggle:** Switch between themes for user preference.
 
-Your challenge is to build out this todo app and get it looking as close to the design as possible.
+---
 
-You can use any tools you like to help you complete the challenge. So if you've got something you'd like to practice, feel free to give it a go.
+## 🛠️ Technologies Used
 
-Your users should be able to:
+### Frontend
+* **HTML5:** Structure of the web pages.
+* **CSS3 (Sass):** Styling and responsiveness.
+* **JavaScript (ES6+):** Client-side logic and interaction with the backend API.
 
-- View the optimal layout for the app depending on their device's screen size
-- See hover states for all interactive elements on the page
-- Add new todos to the list
-- Mark todos as complete
-- Delete todos from the list
-- Filter by all/active/complete todos
-- Clear all completed todos
-- Toggle light and dark mode
-- **Bonus**: Drag and drop to reorder items on the list
 
-Want some support on the challenge? [Join our Slack community](https://www.frontendmentor.io/slack) and ask questions in the **#help** channel.
+### Backend
+* **Python 3:** Core programming language.
+* **Flask:** Lightweight web framework for building RESTful APIs.
+* **Flask-SQLAlchemy:** ORM (Object Relational Mapper) for database interactions.
+* **SQLite3:** Simple, file-based database for persistent storage.
+* **Flask-CORS:** Handles Cross-Origin Resource Sharing for seamless frontend-backend communication.
 
-## Where to find everything
+---
 
-Your task is to build out the project to the designs inside the `/design` folder. You will find both a mobile and a desktop version of the design. 
+## 🚀 Getting Started
 
-The designs are in JPG static format. Using JPGs will mean that you'll need to use your best judgment for styles such as `font-size`, `padding` and `margin`. 
+Follow these steps to get the project up and running on your local machine.
 
-If you would like the design files (we provide Sketch & Figma versions) to inspect the design in more detail, you can [subscribe as a PRO member](https://www.frontendmentor.io/pro).
+### Prerequisites
 
-You will find all the required assets in the `/images` folder. The assets are already optimized.
+* [Git](https://git-scm.com/)
+* [Python 3.x](https://www.python.org/downloads/)
+* (Optional but Recommended for Frontend) [Node.js & npm](https://nodejs.org/en/download/) for running a local server like `serve`.
 
-There is also a `style-guide.md` file containing the information you'll need, such as color palette and fonts.
+### Installation and Setup
 
-## Building your project
+1.  **Clone the Repository:**
+    ```bash
+    git clone [https://github.com/pat6h/ALX-Webstack-TodoApp.git]
+    cd ALX-Webstack-TodoApp
+    ```
 
-Feel free to use any workflow that you feel comfortable with. Below is a suggested process, but do not feel like you need to follow these steps:
+2.  **Backend Setup:**
+    Navigate into the `backend` directory, set up a virtual environment, install dependencies, and run the Flask server.
 
-1. Initialize your project as a public repository on [GitHub](https://github.com/). Creating a repo will make it easier to share your code with the community if you need help. If you're not sure how to do this, [have a read-through of this Try Git resource](https://try.github.io/).
-2. Configure your repository to publish your code to a web address. This will also be useful if you need some help during a challenge as you can share the URL for your project with your repo URL. There are a number of ways to do this, and we provide some recommendations below.
-3. Look through the designs to start planning out how you'll tackle the project. This step is crucial to help you think ahead for CSS classes to create reusable styles.
-4. Before adding any styles, structure your content with HTML. Writing your HTML first can help focus your attention on creating well-structured content.
-5. Write out the base styles for your project, including general content styles, such as `font-family` and `font-size`.
-6. Start adding styles to the top of the page and work down. Only move on to the next section once you're happy you've completed the area you're working on.
+    ```bash
+    cd backend
+    python -m venv venv
+    # Activate virtual environment
+    # On Windows:
+    # .\venv\Scripts\activate
+    # On macOS/Linux:
+    # source venv/bin/activate
+    pip install -r requirements.txt
+    python app.py
+    ```
+    The backend server should start on `http://127.0.0.1:5000/`. Keep this terminal running.
 
-## Deploying your project
+3.  **Frontend Setup:**
+    Open a **new** terminal window and navigate into the `frontend` directory.
 
-As mentioned above, there are many ways to host your project for free. Our recommend hosts are:
+    ```bash
+    cd ../frontend # Go back to root, then into frontend
+    # OR: cd ALX-Webstack-TodoApp/frontend
+    ```
+    * **Option A (Recommended: Use a Local Server):**
+        If you have Node.js installed, install `serve` globally:
+        ```bash
+        npm install -g serve
+        ```
+        Then, run the server from the `frontend` directory:
+        ```bash
+        serve
+        ```
+        It will provide a URL like `http://localhost:3000` (or similar) to open in your browser.
 
-- [GitHub Pages](https://pages.github.com/)
-- [Vercel](https://vercel.com/)
-- [Netlify](https://www.netlify.com/)
+    * **Option B (Simple File Open - May have CORS issues in some browsers):**
+        Simply open the `index.html` file directly in your browser.
+        (e.g., `file:///path/to/ALX-Webstack-TodoApp/frontend/index.html`)
 
-You can host your site using one of these solutions or any of our other trusted providers. [Read more about our recommended and trusted hosts](https://medium.com/frontend-mentor/frontend-mentor-trusted-hosting-providers-bf000dfebe).
+---
 
-## Create a custom `README.md`
+## ⚙️ Backend API Endpoints
 
-We strongly recommend overwriting this `README.md` with a custom one. We've provided a template inside the [`README-template.md`](./README-template.md) file in this starter code.
+The backend exposes the following RESTful API endpoints:
 
-The template provides a guide for what to add. A custom `README` will help you explain your project and reflect on your learnings. Please feel free to edit our template as much as you like.
+* `GET /todos`: Retrieve all todo items.
+* `POST /todos`: Create a new todo item. Request body: `{ "text": "New todo content" }`.
+* `PUT /todos/<id>`: Update an existing todo item. Request body: `{ "completed": true }` or `{ "text": "Updated content" }`, `{ "order": 1 }`.
+* `DELETE /todos/<id>`: Delete a specific todo item.
+* `DELETE /todos/clear-completed`: Delete all completed todo items.
 
-Once you've added your information to the template, delete this file and rename the `README-template.md` file to `README.md`. That will make it show up as your repository's README file.
+---
 
-## Submitting your solution
+## 💡 How to Use
 
-Submit your solution on the platform for the rest of the community to see. Follow our ["Complete guide to submitting solutions"](https://medium.com/frontend-mentor/a-complete-guide-to-submitting-solutions-on-frontend-mentor-ac6384162248) for tips on how to do this.
+1.  Ensure both the backend (Python `app.py`) and frontend (`index.html` via `serve` or directly) are running.
+2.  Open the frontend URL in your browser.
+3.  Type a task in the input field and press Enter to add it.
+4.  Click the circle next to a task to mark it as complete.
+5.  Click the 'X' icon to delete a task.
+6.  Use the filter options (All, Active, Completed) at the bottom.
+7.  Click "Clear Completed" to remove all finished tasks.
 
-Remember, if you're looking for feedback on your solution, be sure to ask questions when submitting it. The more specific and detailed you are with your questions, the higher the chance you'll get valuable feedback from the community.
+All changes will be reflected in your `todos.db` file in the `backend/` directory.
 
-## Sharing your solution
+---
 
-There are multiple places you can share your solution:
+## ✍️ Author
 
-1. Share your solution page in the **#finished-projects** channel of the [Slack community](https://www.frontendmentor.io/slack). 
-2. Tweet [@frontendmentor](https://twitter.com/frontendmentor) and mention **@frontendmentor**, including the repo and live URLs in the tweet. We'd love to take a look at what you've built and help share it around.
-3. Share your solution on other social channels like LinkedIn.
-4. Blog about your experience building your project. Writing about your workflow, technical choices, and talking through your code is a brilliant way to reinforce what you've learned. Great platforms to write on are [dev.to](https://dev.to/), [Hashnode](https://hashnode.com/), and [CodeNewbie](https://community.codenewbie.org/).
+**Ayoub Zeroual**
+* [My GitHub Profile](https://github.com/pat6h)
 
-We provide templates to help you share your solution once you've submitted it on the platform. Please do edit them and include specific questions when you're looking for feedback. 
+---
 
-The more specific you are with your questions the more likely it is that another member of the community will give you feedback.
+## 🙏 Acknowledgements
 
-## Got feedback for us?
-
-We love receiving feedback! We're always looking to improve our challenges and our platform. So if you have anything you'd like to mention, please email hi[at]frontendmentor[dot]io.
-
-This challenge is completely free. Please share it with anyone who will find it useful for practice.
-
-**Have fun building!** 🚀
+* **ALX Webstack Program:** For the opportunity and guidance on this portfolio project.

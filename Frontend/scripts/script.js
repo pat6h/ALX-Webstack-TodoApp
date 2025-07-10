@@ -1,37 +1,13 @@
+// --- API Configuration ---
+const API_BASE_URL = 'http://127.0.0.1:5000'; // Your Flask backend URL
+
+
 function Theme() {
     this.html = document.documentElement;
     this.html.dataset.theme = `theme-light`;
     this.themeBtn = document.querySelector('.theme-btn');
-    // This below type of passing callback for event listener
-    // inside of class won't work. Because in class, the this keyword bounds to 
-    // which it was called on. Here it's the themeBtn itself.
-    // When we click this button the "this" keyword bounds to
-    // that button itself.
-    // So in the first line of code at the toggleTheme() method
-    // the 'this' keyword already refers to the button.
-    // In that button there is no property called "themeBtn".
-    // so it is undefined. And the code stops where Uncaught error thrown. 
-    // this.themeBtn.addEventListener('click',this.toggleTheme)
-
-    // IN CLASS DECLARATION, WE HAVE TO A PASS CALLBACK AS WRITTEN BELOW 
-    // TO GET THE OUTPUT
-    // Here we are binding the "toggleTheme()" method to the object
-    // the method was called on.
-    // The bind method binds the method with same statement and gives
-    // new function. It's not same as the original function.
-    // this.toggleTheme() !== this.toggleTheme.bind(this).
-    // Here the "this" keyword refers to this "Theme" object.
-    // So inside this object themeBtn is available.
-    // And the toggleTheme() method's first line of code works fine.
     this.themeBtn.addEventListener('click', this.toggleTheme.bind(this));
-    // OR
-    // As always arrow function won't bind anything.
-    // IN ARROW FUNCTION, THE 'THIS' KEYWORD INSIDE OF ARROW FUNCTION ALWAYS
-    // DEPENDS ON OUTER SCOPES OR OUTER FUNCTION'S 'THIS' VALUE;
-    // Here the outer scope is the Theme Object and so "this" value.
-    // this.themeBtn.addEventListener('click',()=>{
-    //     this.toggleTheme();
-    // });
+
 }
 
 Theme.prototype.toggleTheme = function () {
